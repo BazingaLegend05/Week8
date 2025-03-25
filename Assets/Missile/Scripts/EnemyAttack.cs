@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 public class EnemyAttack : MonoBehaviour
 {
     [SerializeField]
@@ -22,6 +23,8 @@ public class EnemyAttack : MonoBehaviour
     private float blinkDuration = 0.5f; 
     [SerializeField]
     private float blinkInterval = 1f;
+    [SerializeField]
+    GameObject Particle;
 
     void Start()
     {
@@ -88,7 +91,16 @@ public class EnemyAttack : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Collision detected with: " + collision.gameObject.name);
         Destroy(this.gameObject);
+        Particle.transform.position = transform.position;
+        Particle.gameObject.SetActive(true);
+        StartCoroutine(ExplosionOff());
+    }
+    private IEnumerator ExplosionOff()
+    {
+        yield return new WaitForSeconds(delayTimer);
+        Particle.gameObject.SetActive(false);
     }
 
 }

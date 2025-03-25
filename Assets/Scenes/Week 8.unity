@@ -182,10 +182,10 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &317158329
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +319,6 @@ GameObject:
   - component: {fileID: 322361340}
   - component: {fileID: 322361339}
   - component: {fileID: 322361338}
-  - component: {fileID: 322361337}
   m_Layer: 0
   m_Name: MissileModel
   m_TagString: Untagged
@@ -342,33 +341,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 765522657}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!54 &322361337
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 322361335}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!136 &322361338
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -384,8 +356,8 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 1
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -685,6 +657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 765522657}
   - component: {fileID: 765522656}
+  - component: {fileID: 765522658}
   m_Layer: 0
   m_Name: MissileObject
   m_TagString: Untagged
@@ -729,6 +702,33 @@ Transform:
   - {fileID: 381132558}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &765522658
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765522655}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!1001 &1160540156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -737,6 +737,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 24790832169272526, guid: e785973e6f8075246ada004944a9281c, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 885892376396822090, guid: e785973e6f8075246ada004944a9281c, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351234030684416052, guid: e785973e6f8075246ada004944a9281c, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160853697844444185, guid: e785973e6f8075246ada004944a9281c, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180823576981193816, guid: e785973e6f8075246ada004944a9281c, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324631725702819480, guid: e785973e6f8075246ada004944a9281c, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5255094677323424273, guid: e785973e6f8075246ada004944a9281c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.71
@@ -787,15 +811,27 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3f01d602149e46840bb222ff2eb5b4c1, type: 2}
     - target: {fileID: 7856982314653037399, guid: e785973e6f8075246ada004944a9281c, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8118961776450039046, guid: e785973e6f8075246ada004944a9281c, type: 3}
       propertyPath: m_Name
       value: PlayerObject
       objectReference: {fileID: 0}
+    - target: {fileID: 8118961776450039046, guid: e785973e6f8075246ada004944a9281c, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8230850136979836761, guid: e785973e6f8075246ada004944a9281c, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557403755433021461, guid: e785973e6f8075246ada004944a9281c, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071693653486261424, guid: e785973e6f8075246ada004944a9281c, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1674483847438218995, guid: e785973e6f8075246ada004944a9281c, type: 3}
@@ -897,7 +933,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 12
-  field of view: 60
+  field of view: 120
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
